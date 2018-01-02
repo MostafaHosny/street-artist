@@ -1,6 +1,19 @@
-<nav class="navbar navbar-dark bg-inverse navbar-fixed-top">
-  <form class="form-inline pull-xs-right">
-    <input class="form-control" type="text" placeholder="Search">
-    <button class="btn btn-success-outline" type="submit">Search</button>
-  </form>
-</nav>
+
+<div class="container">
+
+
+  <h2 class=text-center> Cool Search box using bootstrap</h2><br><hr>
+  <div class="row">
+    <div class="col-xs-11 col-xs">
+    <%= form_tag("/artists/search", method: "get" ) do %>
+  <div class="input-group">
+  <%= text_field_tag 'ed-srch-term' , nil, class: "form-control", placeholder: "Search . . .", name: "q" ,id: "ed-srch-term" %>
+   <div class="input-group-btn">
+  <%= submit_tag "Search" , id: "searchbtn" , name: nil %>
+   </div>
+  </div>
+<% end %>
+    </div>
+  </div>
+</div>
+

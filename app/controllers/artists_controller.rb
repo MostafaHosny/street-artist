@@ -6,9 +6,15 @@ class ArtistsController < ApplicationController
   def index
     @artists = Artist.all
   end
+  
+  def search
+     @artists = Artist.search(params[:q])
+      respond_to do |format|
+        format.js 
+        format.html
+      end
+  end
 
-  # GET /artists/1
-  # GET /artists/1.json
   def show
   end
 
