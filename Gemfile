@@ -34,9 +34,14 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+# for admin panel
 gem "administrate"
 
+gem 'rails-jquery-autocomplete'
+
+gem 'jquery-ui-rails'
+
+gem 'will_paginate', '>= 3.1'
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'

@@ -8,11 +8,11 @@ class Artist < ApplicationRecord
 
   #--------------------------------- Methods ----------------------------------
 
-  def self.search(kword)
+  def self.search(kword ,page)
     if kword
-      where('lower(name) LIKE ?', "%#{kword.downcase}%")
+      where('lower(name) LIKE ?', "%#{kword.downcase}%").paginate(page: page, per_page: 10)
     else
-      all
+      paginate(page: page, per_page: 10)
     end
   end
 end

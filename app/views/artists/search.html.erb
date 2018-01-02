@@ -1,10 +1,11 @@
+
   <div class="container">
     <h2 class=text-center> Book a street artist</h2><br><hr>
     <div class="row">
       <div class="col-xs-11 col-xs">
-      <%= form_tag("/artists/search", method: "get" ) do %>
+      <%= form_tag("/artists/search", method: "get" , remote: true) do %>
     <div class="input-group">
-    <%= text_field_tag 'ed-srch-term' , nil, class: "form-control", placeholder: "Search . . .", name: "q" ,id: "ed-srch-term" %>
+      <%= autocomplete_field_tag 'ed-srch-term' , nil, autocomplete_artist_name_artists_path ,class: "form-control", placeholder: "Search . . .", name: "q" ,id: "ed-srch-term" %>
       <div class="input-group-btn">
       <%= submit_tag "Search" , id: "searchbtn" , name: nil %>
        </div>
@@ -15,42 +16,21 @@
   </div>
 
 
-
 <div class="container-fluid" >
     <div class="container container-pad" id="artist-listingss">
 
         <div class="row">
             <div class="col-sm-12" id="result"> 
-              <% @artists.each do |artist| %>
-                <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 artist-listings">
-                    <div class="media">
-                        <a class="pull-left" href="#" target="_parent">
-                        <img alt="image" class="img-responsive" src="https://s3.amazonaws.com/uifaces/faces/twitter/mrvanz/128.jpg"></a>
-
-                        <div class="clearfix visible-sm"></div>
-
-                        <div class="media-body fnt-smaller">
-                            <a href="#" target="_parent"></a>
-
-                            <h3 class="media-heading">
-                              <%= link_to artist.name , artist_path(artist) %>
-                              <!-- <a href="#" target="_parent"> <%= artist.name%> </a></h3> -->
-
-
-                            <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">
-                                <li>Location </li>
-
-                                <span>:</span>
-
-                                <li> <%= artist.location.name %> </li>
-                            </ul>
-
-                            <p class="hidden-xs">  </p><span class="fnt-smaller fnt-lighter fnt-arial"> <%= artist.description %> </span>
-                        </div>
-                    </div>
-                </div><!-- End Listing-->
-              <% end %>
+              
+               <%= render partial: "artist" %>
+           
         </div><!-- End row -->
     </div><!-- End container -->
 </div>
 
+<div class="apple_pagination">
+  <div class="page_info">
+    <%= page_entries_info @artists %>
+  </div>
+  <%= will_paginate @artists, :container => false %>
+</div>

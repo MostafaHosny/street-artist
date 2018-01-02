@@ -10,6 +10,7 @@ Rails.application.routes.draw do
    resources :artists do
     collection do
         get 'search'
+        get :autocomplete_artist_name
     end
   end
   root 'artists#search'
