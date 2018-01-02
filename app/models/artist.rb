@@ -10,7 +10,7 @@ class Artist < ApplicationRecord
 
   def self.search(kword)
     if kword
-      where('name LIKE ?', "%#{kword}%")
+      where('lower(name) LIKE ?', "%#{kword.downcase}%")
     else
       all
     end

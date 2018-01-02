@@ -1,19 +1,1 @@
 
-<div class="container">
-
-
-  <h2 class=text-center> Book a street artist</h2><br><hr>
-  <div class="row">
-    <div class="col-xs-11 col-xs">
-    <%= form_tag("/artists/search", method: "get" ) do %>
-  <div class="input-group">
-  <%= text_field_tag 'ed-srch-term' , nil, class: "form-control", placeholder: "Search . . .", name: "q" ,id: "ed-srch-term" %>
-   <div class="input-group-btn">
-  <%= submit_tag "Search" , id: "searchbtn" , name: nil %>
-   </div>
-  </div>
-<% end %>
-    </div>
-  </div>
-</div>
-

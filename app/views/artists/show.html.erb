@@ -1,19 +1,14 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @artist.name %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @artist.location %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @artist.description %>
-</p>
-
-<%= link_to 'Edit', edit_artist_path(@artist) %> |
-<%= link_to 'Back', artists_path %>
+<%= stylesheet_link_tag    'atrist_profile.css', media: 'all' %>
+<div class="content">
+  <div class="card">
+    <div class="firstinfo"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/mrvanz/128.jpg"/>
+      <div class="profileinfo">
+        <h1> <%= @artist.name%> </h1>
+        <h3> <%= @artist.location.name %> </h3>
+        <p class="bio"><%= @artist.description %></p>
+      </div>
+    </div>
+  </div>
+  <div class="badgescard"> <span class="devicons devicons-django"></span><span class="devicons devicons-python"> </span><span class="devicons devicons-codepen"></span><span class="devicons devicons-javascript_badge"></span><span class="devicons devicons-gulp"></span><span class="devicons devicons-angular"></span><span class="devicons devicons-sass"> </span></div>
+</div>
