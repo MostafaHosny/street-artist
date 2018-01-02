@@ -12,6 +12,7 @@ class LocationDashboard < Administrate::BaseDashboard
     id: Field::Number,
     name: Field::String,
     latitude: Field::Number.with_options(decimals: 2),
+    longitude: Field::Number.with_options(decimals: 2),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -35,6 +36,7 @@ class LocationDashboard < Administrate::BaseDashboard
     :id,
     :name,
     :latitude,
+    :longitude ,
     :created_at,
     :updated_at,
   ].freeze
@@ -43,9 +45,9 @@ class LocationDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :artists,
     :name,
     :latitude,
+    :longitude,
   ].freeze
 
   # Overwrite this method to customize how locations are displayed
