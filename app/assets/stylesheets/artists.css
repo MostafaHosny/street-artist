@@ -64,19 +64,19 @@ a {
 
 /**** MEDIA QUERIES ****/
 @media only screen and (max-width: 991px) {
-    #property-listings .property-listing {
+    #artist-listings .artist-listings {
         padding: 5px;
     }
-    #property-listings .property-listing a {
+    #artist-listings .artist-listings a {
         margin: 0;
     }
-    #property-listings .property-listing .media-body {
+    #artist-listings .artist-listings .media-body {
         padding: 10px;
     }
 }
 
 @media only screen and (min-width: 992px) {
-    #property-listings .property-listing img {
+    #artist-listings .artist-listings img {
         max-width: 180px;
     }
 }
